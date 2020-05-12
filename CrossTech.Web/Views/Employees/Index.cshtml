@@ -1,0 +1,16 @@
+﻿@model CrossTech.Application.UseCases.EmployeesUseCases.RequestEmployeeList.RequestEmployeeListUseCaseResult
+@using Newtonsoft.Json;
+@using System.Web;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeadScripts {
+    <script type="text/javascript">
+        var result = JSON.parse(@Html.Raw(HttpUtility.JavaScriptStringEncode(JsonConvert.SerializeObject(Model), addDoubleQuotes: true)));
+        window.employees = result.Employees;
+        window.requesterPermissions = result.RequesterPermissions;
+    </script>
+}
+<div id="app"></div>

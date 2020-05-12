@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тестовое задание для CrossTech</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    @RenderSection("Styles", required: false)
+    @RenderSection("HeadScripts", required: false)
+    <link href=/js/chunk-2d225a65.b6d61ac4.js rel=prefetch>
+    <link href=/js/chunk-af40d2bc.a628df8a.js rel=prefetch>
+    <link href=/js/chunk-e3376d76.c0892422.js rel=prefetch>
+    <link href=/css/app.1c8061cd.css rel=preload as=style>
+    <link href=/js/app.7f6c9bee.js rel=preload as=script>
+    <link href=/js/chunk-vendors.4422da81.js rel=preload as=script>
+    <link href=/css/app.1c8061cd.css rel=stylesheet>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Тестовое задание для CrossTech</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <form action="/logout" method="post">
+                                    <button type="submit" class="btn btn-info">Выйти</button>
+                                </form>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src=/js/chunk-vendors.4422da81.js></script>
+    <script src=/js/app.7f6c9bee.js></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
